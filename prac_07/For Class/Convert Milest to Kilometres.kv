@@ -1,20 +1,22 @@
 BoxLayout:
     orientation: 'vertical'
     BoxLayout:
-    orientation: 'horizontal'
+        orientation: 'horizontal'
         TextInput:
             id: input_number
             multiline: False
+            on_text: app.handle_convert(input_number.text)
         BoxLayout:
             orientation: 'vertical'
+            width: 100
             Button:
                 text: 'Up'
-                on_press app.handle_up()
+                on_press: app.handle_increment(input_number.text, 1)
             Button:
                 text: 'Down'
-                on_press app.handle_down()
-    Button:
-        text: Convert m to km
-        on_press: app.handle_convert(input_number.text)
+                on_press: app.handle_increment(input_number.text, -1)
+#    Button:
+#        text: 'Convert m to km'
+#        on_press: app.handle_convert(input_number.text)
     Label
         id: output_label
