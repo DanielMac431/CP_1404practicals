@@ -11,7 +11,7 @@ def main():
     print("Let's drive!")
     while menu_selection != 'q':
         print('q)uit, c)hoose, d)rive')
-        menu_selection = input('>>> ')
+        menu_selection = input('>>> ').lower()
         if menu_selection == 'c':
             print('Taxis available:')
             display_taxis(taxis)
